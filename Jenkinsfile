@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 // sh 'go build'
-                sh 'echo $(basename `pwd`)'
+                sh 'echo $(pwd)'
             }
         }
         stage('Test') {
