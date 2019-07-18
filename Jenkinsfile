@@ -9,9 +9,12 @@ pipeline {
                 sh 'echo $(docker ps)'
             }
         }
-        stage('Test') {
+        stage('Build images') {
             steps {
-                echo 'Testing'
+                sh 'mkdir -p /go/binary/'
+                sh 'cp conf /go/binary/ -R'
+                sh 'cp views /go/binary/ -R'
+                sh 'cp hello /go/binary/ -R'
             }
         }
         stage('Deploy') {
