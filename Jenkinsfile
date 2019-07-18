@@ -1,9 +1,11 @@
 pipeline {
-    agent any
+    agent {
+         docker { image 'registry.cn-shanghai.aliyuncs.com/artcoding/beego:lts' }
+    }
     stages {
         stage('Build') {
             steps {
-                sh 'echo $(pwd)'
+                sh 'go build'
             }
         }
         stage('Test') {
