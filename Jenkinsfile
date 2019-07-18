@@ -5,16 +5,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // sh 'go build'
+                 sh 'go build'
                 sh 'echo $(docker ps)'
             }
         }
         stage('Build images') {
             steps {
-                sh 'mkdir -p /go/binary/'
-                sh 'cp conf /go/binary/ -R'
-                sh 'cp views /go/binary/ -R'
-                sh 'cp hello /go/binary/ -R'
+               sh 'echo $(ls `/usr/local/go/`)'
             }
         }
         stage('Deploy') {
