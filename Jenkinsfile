@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 // sh 'go build'
-                sh 'docker -version'
+                sh 'echo $(docker ps)'
             }
         }
         stage('Test') {
