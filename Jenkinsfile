@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo $(pwd)
+                sh 'echo $(pwd)'
             }
         }
         stage('Test') {
